@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Parking App</title>
+    <style>
+        /* Global styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styles */
+.black-header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-header {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.unparked-text {
+    font-size: 24px;
+}
+
+.mid-header {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.about-text {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.right-header {
+    display: flex;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* About us section */
+.about-us-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+.about-us-heading {
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.about-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.about-card {
+    width: 30%;
+    height: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    overflow: hidden;
+}
+
+.about-card:hover {
+    transform: translateY(-10px); /* Lift the card slightly */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.about-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.about-card h2 {
+    font-size: 1.5rem;
+    color: #3f51b5;
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Show only 3 lines initially */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.about-card .card-btn {
+    padding: 10px 20px;
+    background-color: #7c4dff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: auto;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.about-card .card-btn:hover {
+    background-color: #5e35b1;
+}
+
+.about-card.expanded p {
+    -webkit-line-clamp: unset; /* Show all lines */
+}
+
+@media (max-width: 768px) {
+    .about-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-card {
+        width: 90%;
+    }
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-us, .quick-links, .random-info {
+    width: 30%;
+}
+
+.about-us h3, .quick-links h3, .random-info h3 {
+    color: #7c4dff;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.about-us p {
+    color: #ddd;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links ul li {
+    margin: 10px 0;
+}
+
+.quick-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.quick-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.random-info p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.random-info strong {
+    color: #7c4dff;
+}
+
+
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-form, .random-info, .quick-links, .about-us {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quick-links, .random-info, .about-us {
+        width: 100%;
+    }
+}
+
+         
+    </style>
+</head>
+<body>
+    <header class="black-header">
+        <div class="left-header">
+            <img src="images/image-removebg-preview.png" alt="Unparked Logo" class="logo">
+            <span class="unparked-text">Unparked</span>
+        </div>
+        <div class="mid-header">
+            <span class="about-text">About</span>
+        </div>
+        <nav class="right-header">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="about-us-container">
+        <div class="about-cards-container">
+            <div class="about-card" id="card1">
+                <img src="images/parkingcard1.jpg" alt="Card 1 Image">
+                <h2>Simplifies parking with intuitive tools</h2>
+                <p>"Unparked offers intuitive tools and interfaces, ensuring hassle-free parking experiences for users of all levels. With detailed navigation and seamless integration, Unparked provides an unmatched parking management solution. Tailored for every need, the app redefines efficiency."</p>
+                <button class="card-btn" onclick="toggleText(this)">Learn More</button>
+            </div>
+            <div class="about-card" id="card2">
+                <img src="images/parkingcard2.jpg" alt="Card 2 Image">
+                <h2>Enhances parking management efficiency</h2>
+                <p>"Unparked provides robust management tools, empowering users to optimize parking resources, streamline operations, and maximize efficiency. Advanced analytics and customizable features ensure users stay ahead in a fast-paced world."</p>
+                <button class="card-btn" onclick="toggleText(this)">Learn More</button>
+            </div>
+            <div class="about-card" id="card3">
+                <img src="images/parkingcard3.jpg" alt="Card 3 Image">
+                <h2>Streamlines parking experience for users</h2>
+                <p>"With Unparked, users enjoy a seamless parking experience, thanks to its comprehensive features designed to simplify processes and minimize complexities. From real-time updates to user-friendly interfaces, Unparked is your ultimate parking companion."</p>
+                <button class="card-btn" onclick="toggleText(this)">Learn More</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="about-us">
+                <h3>About Us</h3>
+                <p>We are committed to providing innovative parking solutions.</p>
+                <p>Our goal is to enhance the parking experience for both individuals and businesses.</p>
+            </div>
+
+            
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact_us.html">Contact</a></li>
+                    <li><a href="contact_us.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="random-info">
+                <h3>Random Contact Info</h3>
+                <p><strong>Phone:</strong> +1 123-456-7890</p>
+                <p><strong>Email:</strong> example@example.com</p>
+                <p><strong>Address:</strong> 123 Main St, City, Country</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleText(button) {
+            const card = button.parentElement;
+            card.classList.toggle('expanded');
+            button.textContent = card.classList.contains('expanded') ? 'Show Less' : 'Learn More';
+        }
+    </script>
+</body>
+</html>

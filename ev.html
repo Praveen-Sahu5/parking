@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charging Solutions - Unparked</title>
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #7c4dff;
+            color: black;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 25px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .feature-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            width: 30%;
+            box-sizing: border-box;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .feature-box h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .feature-box p {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .feature-box .btn-book {
+            background-color: #7c4dff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .feature-box .btn-book:hover {
+            background-color: #5e35b1;
+        }
+
+        .contact-us {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .contact-us p {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .contact-us a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-us a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-us, .quick-links, .random-info {
+    width: 30%;
+}
+
+.about-us h3, .quick-links h3, .random-info h3 {
+    color: #7c4dff;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.about-us p {
+    color: #ddd;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links ul li {
+    margin: 10px 0;
+}
+
+.quick-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.quick-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.random-info p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.random-info strong {
+    color: #7c4dff;
+}
+
+
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-form, .random-info, .quick-links, .about-us {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quick-links, .random-info, .about-us {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1><u>EV Charging Solutions</u></h1>
+        <p>"Welcome to Unparked's EV charging solutions. We offer a range of services designed to meet the needs of electric vehicle owners, from individuals to large corporations."</p>
+
+        <div class="features">
+            <div class="feature-box">
+                <img src="images/evcard1.jpg" alt="Fast Charging">
+                <h2>Fast Charging</h2>
+                <p>"Our fast charging stations ensure quick and efficient charging for your electric vehicles, reducing downtime and increasing productivity."</p>
+                <a href="contact_us.html" class="btn-book">Book Now</a>
+            </div>
+            <div class="feature-box">
+                <img src="images/evcard2.jpg" alt="Smart Management">
+                <h2>Smart Management</h2>
+                <p>"Utilize our smart charging management system to optimize charging schedules, monitor energy usage, and reduce costs while maintaining peak performance."</p>
+                <a href="contact_us.html" class="btn-book">Book Now</a>
+            </div>
+            <div class="feature-box">
+                <img src="images/evcard3.jpg" alt="Scalable Solutions">
+                <h2>Scalable Solutions</h2>
+                <p>"Our scalable solutions are tailored to fit your needs, whether you're a small business or a large enterprise. We offer flexible plans to accommodate your fleet size and charging requirements."</p>
+                <a href="contact_us.html" class="btn-book">Book Now</a>
+            </div>
+        </div>
+
+        <div class="contact-us">
+            <p>For further information or inquiries, please <a href="contact_us.html">contact us</a>.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="about-us">
+                <h3>About Us</h3>
+                <p>We are committed to providing innovative parking solutions.</p>
+                <p>Our goal is to enhance the parking experience for both individuals and businesses.</p>
+            </div>
+
+            
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact_us.html">Contact</a></li>
+                    <li><a href="contact_us.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="random-info">
+                <h3>Random Contact Info</h3>
+                <p><strong>Phone:</strong> +1 123-456-7890</p>
+                <p><strong>Email:</strong> example@example.com</p>
+                <p><strong>Address:</strong> 123 Main St, City, Country</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

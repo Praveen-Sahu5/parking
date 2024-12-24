@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #7c4dff; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .payment-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #7c4dff; 
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn-primary {
+            padding: 12px 30px;
+            background-color: #7c4dff; 
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-primary:hover {
+            background-color: #7c4dff
+        }
+
+        .btn-primary i {
+            margin-right: 10px;
+        }
+
+        .payment-summary {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+        .summary-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .summary-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .summary-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .summary-list li:last-child {
+            margin-top: 10px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Payment Gateway</h1>
+        <div class="payment-form">
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" id="payBtn" class="btn-primary">Pay Now <i class="fas fa-lock"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="payment-summary">
+            <div class="summary-title">Payment Summary</div>
+            <ul class="summary-list">
+                <li>
+                    <span>Location:</span>
+                    <span id="locationName">Selected Location</span>
+                </li>
+                <li>
+                    <span>Car Parking Name:</span>
+                    <span id="carParkingName">Selected Car Parking</span>
+                </li>
+                <li>
+                    <span>Amount:</span>
+                    <span id="amount">₹2000</span> <!-- Amount in Indian Rupees -->
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var cardNumber = document.getElementById('cardNumber').value;
+            var expiryDate = document.getElementById('expiryDate').value;
+            var cvv = document.getElementById('cvv').value;
+
+            // Validate card details (for demonstration purposes)
+            if (cardNumber.trim() === '' || expiryDate.trim() === '' || cvv.trim() === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Simulate payment processing
+            setTimeout(function () {
+                alert('Payment successful! Redirecting to homepage.');
+                window.location.href = 'index.html'; // Redirect to homepage after payment success
+            }, 2000); // Simulate 2 seconds delay for payment processing
+        });
+
+        // Update payment summary with selected location and car parking name
+        document.getElementById('locationName').innerText = localStorage.getItem('selectedLocation') || 'Selected Location';
+        document.getElementById('carParkingName').innerText = localStorage.getItem('selectedCarParking') || 'Selected Car Parking';
+    </script>
+</body>
+
+</html>

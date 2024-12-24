@@ -1,0 +1,156 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+nav {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logo:hover img {
+    transform: scale(1.2); /* Increase size on hover */
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #7F2CCB;
+}
+
+header {
+    text-align: center;
+    padding: 100px 0;
+    background-size: cover;
+    color: #fff;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #000; /* Text color set to black */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.box {
+    width: 75%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.text-box {
+    text-align: center;
+    color: #000; /* Text color set to black */
+}
+
+.button-container {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.button-box button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.button-box button:hover {
+    background-color: #7F2CCB;
+    color: #fff;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Map styles */
+#map {
+    width: calc(75% - 20px); /* 75% of the width minus some padding */
+    height: 300px; /* Set the map height */
+    margin: 10px;
+    border: 1px solid #ccc; /* Add a border for visual separation */
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.search-container input[type=text] {
+    width: 50%;
+    padding: 8px;
+    margin-right: 5px;
+}
+
+.search-container button {
+    padding: 8px 15px;
+}

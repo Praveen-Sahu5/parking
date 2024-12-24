@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Sign In</title>
+    <style>
+        /* Navigation bar styles */
+        nav {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            margin-left: auto;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Form container styles */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #36228e, #4e54c8);
+            font-family: Arial, sans-serif;
+            padding-top: 60px; /* Add padding top to adjust for the fixed navigation bar */
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn-container {
+            text-align: right; /* Align buttons to the right */
+        }
+
+        .btn-container button {
+            padding: 8px 16px;
+            background-color: #7c4dff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-container button:hover {
+            background-color: #5a36b1;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logo">
+            <img src="images/image-removebg-preview.png" alt="Unparked Logo">
+            Unparked
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Sign In</h1>
+        <form id="signInForm">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+            </div>
+            <div class="btn-container">
+                <button onclick="signIn()">Sign In</button>
+            </div>
+        </form>
+        <p>Do you not have an account? <a href="sign-up.html" style="color: #7c4dff;">Register</a></p>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

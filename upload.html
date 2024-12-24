@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Spot Reservation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #7c4dff; 
+            color: #000; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff; 
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #000; 
+        }
+
+        input[type="text"], input[type="number"], select, input[type="range"], input[type="datetime-local"] {
+            width: calc(100% - 24px);
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.05); 
+            color: #000;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: #7c4dff; 
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #4e54c8 
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: #fff; 
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .grid-item label {
+            display: block;
+            cursor: pointer;
+            color: #000; 
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .grid-item input[type="checkbox"]:checked + label {
+            background-color: #7c4dff; 
+            color: #fff; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parking Spot Reservation</h1>
+        <form id="parkingForm">
+            <label for="dateTime">Date and Time Range:</label>
+            <input type="datetime-local" id="dateTime" name="dateTime">
+            
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location">
+            
+            <label for="rows">Number of Rows:</label>
+            <input type="number" id="rows" name="rows" min="1" value="1">
+            
+            <label for="cols">Number of Columns:</label>
+            <input type="number" id="cols" name="cols" min="1" value="1">
+            
+            <div id="gridContainer" class="grid-container"></div>
+            
+            <button type="submit" id="submit">Submit Details</button>
+        </form>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDZndIEHXZoaI4Fh7ZCu0Vl2gfIKNx4QM8",
+            authDomain: "unparked2.firebaseapp.com",
+            databaseURL: "https://unparked2-default-rtdb.firebaseio.com",
+            projectId: "unparked2",
+            storageBucket: "unparked2.appspot.com",
+            messagingSenderId: "914525171817",
+            appId: "1:914525171817:web:74265026480839cb8c72f8",
+            measurementId: "G-R3WYWFCZSR"
+        };
+        
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getDatabase(app);
+
+        document.getElementById("submit").addEventListener('click', function(e) {
+            e.preventDefault();
+            set(ref(db, 'user/' + document.getElementById("dateTime").value), {
+                dateTime: document.getElementById("dateTime").value,
+                location: document.getElementById("location").value,
+                rows: document.getElementById("rows").value,
+                cols: document.getElementById("cols").value
+            });
+            alert("Reservation Successful!");
+        });
+    </script>
+</body>
+</html>

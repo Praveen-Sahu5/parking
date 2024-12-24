@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Unparked</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #36228e, #4e54c8);
+    }
+
+    .container {
+      width: 300px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      color: #000000;
+      margin-bottom: 35px;
+      margin-top: auto;
+    }
+
+    img {
+      width: 150px; /* Adjust width as needed */
+       /* Add some space below the image */
+    }
+
+    .btn-container {
+      margin-top: 20px;
+    }
+
+    button {
+      width: 140px;
+      padding: 10px;
+      background-color: #7c4dff; /* Darkened purple */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s; /* Added transform */
+    }
+
+    button:hover {
+      background-color: #5a36b1; /* Darkened hover color */
+      transform: translateY(-5px); /* Added */
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animation */
+    .parking-icon {
+      width: 50px;
+      height: auto;
+      margin-bottom: 20px;
+      animation: parkingAnimation 1s infinite alternate; /* Added */
+    }
+
+    @keyframes parkingAnimation {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="parking-icon" src="images/parkingicon.jpg" alt="Parking Icon">
+    <h1>Unparked</h1>
+    <div class="btn-container">
+      <button onclick="location.href='sign-up.html'">Sign Up</button>
+      <button onclick="location.href='signin.html'">Log In</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
